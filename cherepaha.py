@@ -23,8 +23,8 @@ from turtle import*
 
 
 # №7410
-screensize(3000, 3000)
-k = 2
+screensize(10000, 10000)
+k = 10
 speed(0)
 rt(45)
 for i in range(10):
@@ -46,7 +46,7 @@ up()
 color("red")
 for x in range(-10, 10):
     for y in range(-10, 100):
-        goto(x * 10 * k, y * 10 * k)
+        goto(x * k, y * k)
         dot(2)
 
 mainloop()
