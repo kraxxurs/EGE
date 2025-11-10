@@ -1,6 +1,6 @@
 from itertools import product, permutations
 
-# №8142
+# №8142 
 
 # count = 0
 # for number in permutations("0123456789", 4):
