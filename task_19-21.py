@@ -1,34 +1,28 @@
-# TASK 1
+# № 8080
 
-# def g(s, step, end):
-#     if s >= 129:
-#         return step in end
-#     if step >= max(end):
+# def fn(s, m):
+#     if s <= 87:
+#         return m % 2 == 0
+#     if m == 0:
 #         return False
-#     moves = [g(s + 1, step + 1, end), g(s * 2, step + 1, end)]
-#     if ((step + 1) % 2) == (end[0] % 2):
-#         return any(moves)
-#     else:
-#         return all(moves)
+#     h = [fn(s-2, m - 1), fn(s // 2, m - 1)]
+#     return any(h) if m % 2 != 0 else all(h)
 
-# print("19 answer:", [s for s in range(1, 129) if g(s, 0, [2])])
-# print("20 answer:", [s for s in range(1, 129) if g(s, 0, [3])])
-# print("21 answer:", min([s for s in range(1, 129) if g(s, 0, [2, 4]) and not g(s, 0, [2])]))
+# print("19)", [s for s in range(88, 200) if fn(s, 2)])
+# print("20)", [s for s in range(88, 200) if not fn(s, 1) and fn(s, 3)])
+# print("21)", [s for s in range(88, 200) if not fn(s, 2) and fn(s, 4)])
 
 
-# TASK 2
+# № 8666
 
-# def g(s, step, end):
-#     if s <= 30:
-#         return step in end
-#     if step >= max(end):
-#         return False
-#     moves = [g(s - 3, step + 1, end), g(s - 5, step + 1, end), g(s // 4, step + 1, end)]
-#     if ((step + 1) % 2) == (end[0] % 2):
-#         return any(moves)
-#     else:
-#         return all(moves)
+def fn(s, m):
+    if s >= 125:
+        return m % 2 == 0
+    if m == 0:
+        return False
+    h = [fn(s + 2, m - 1), fn(s + 4, m - 1), fn(s * 2, m - 1)]
+    return any(h) if m % 2 != 0 else all(h)
 
-# print("19 answer:", [s for s in range(31, 1000) if g(s, 0, [2])])
-# print("20 answer:", [s for s in range(31, 1000) if g(s, 0, [3])])
-# print("21 answer:", min([s for s in range(31, 1000) if g(s, 0, [2, 4]) and not g(s, 0, [2])]))
+print("19)", [s for s in range(1, 125) if fn(s, 2)])
+print("20)", [s for s in range(1, 125) if not fn(s, 1) and fn(s, 3)])
+print("21)", [s for s in range(1, 125) if not fn(s, 2) and fn(s, 4)])
