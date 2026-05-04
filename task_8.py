@@ -24,3 +24,22 @@ from itertools import product, permutations
 #             count = i
 
 # print(count)
+
+
+from itertools import permutations, product
+count = []
+res = []
+chet = "02468"
+nechet = "1357"
+for i, number in enumerate(product("012345678", repeat = 6), start = 1):
+    if number[0] != "0" and number[0] not in nechet:
+        if number[5] == "2" or number[5] == "3":
+            continue
+        if number.count("1") < 2:
+            continue
+        else: 
+            count.append(i)
+            res.append(number)
+print(res)
+#print(count)
+print(len(count))
